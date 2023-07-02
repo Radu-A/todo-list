@@ -1,3 +1,10 @@
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
 .message-section {
-    color: rgb(65, 215, 48);
+    color: #628500;
+    border: 1px solid #628500;
 }

@@ -1,0 +1,8 @@
+.task-card {
+    padding: 0 0.5rem;
+    display: flex;
+    justify-content: right;
+    gap: 2rem;
+    border: 1px solid #242424;
+    border-radius: 5px;
+}

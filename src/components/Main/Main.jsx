@@ -13,15 +13,21 @@ const Main = () => {
   const [messageSection, setMessage] = useState();
   // useEffect(() => {
   //   console.log('holi')
-  //   setTasks('comer', 'cagar');
+  //   setTasks('eat', 'drink');
   // }, [])
   
   return (
-    <>
-      {messageSection}
-      <Form setTasks={setTasks} tasksList={tasksList} setMessage={setMessage}/>
-      <List tasksList={tasksList} />
-      <ControlSection setTasks={setTasks} tasksList={tasksList} data={parsedData}/>
+    <> 
+      <main>
+        {messageSection}
+        <section>
+          <h1>TO DO</h1>
+          <h2>---------------------</h2>
+        </section>
+        <Form setTasks={setTasks} tasksList={tasksList} setMessage={setMessage}/>
+        <List setTasks={setTasks} tasksList={tasksList} />
+        <ControlSection setTasks={setTasks} tasksList={tasksList} data={parsedData}/>
+      </main>
     </>
   );
 };
