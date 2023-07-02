@@ -2,7 +2,9 @@ import React, { useState } from "react";
 
 const Form = ({setTasks, tasksList, setMessage}) => {
   const [showAddButton, setShowAddButton] = useState(false);
-  
+
+  const [valueInput, setValueInput] = useState(null)
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const newTask = event.target.task.value;
@@ -20,21 +22,19 @@ const Form = ({setTasks, tasksList, setMessage}) => {
   }
 
   const handleChange = () => {
-    setTaskInput(<input type="text" name="task" id="" placeholder="task" onChange={handleChange}/>);
+    setValueInput(null);
     console.log('holi');
     setShowAddButton(true);
     setTimeout( async () => {
       setShowAddButton(false);
-      setTaskInput(<input type="text" name="task" id="" value='' placeholder="task" onChange={handleChange}/>);
+      setValueInput('')
     }, 4000);
   }
-
-  const [taskInput, setTaskInput] = useState(<input type="text" name="task" id="" placeholder="task" onChange={handleChange}/>)
 
   return (
     <section className='form-section'>
       <form onSubmit={handleSubmit}>
-        {taskInput}
+        <input type="text" name="task" value={valueInput && valueInput} id="" placeholder="task" onChange={handleChange}/>
         {showAddButton && <button type="submit">ADD</button>}
       </form>
     </section>
