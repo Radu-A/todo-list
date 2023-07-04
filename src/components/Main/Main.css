@@ -4,7 +4,17 @@ main {
     gap: 1rem;
 }
 
-.message-section {
+.ok-section {
+    box-sizing: border-box;
+    padding: 0 1rem;
     color: #628500;
     border: 1px solid #628500;
+}
+
+.fail-section {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 1rem;
+    color: #ca3232;
+    border: 1px solid #ca3232;
 }

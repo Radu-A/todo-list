@@ -1,4 +1,5 @@
 import React from "react";
+import './ControlSection.css'
 
 const ControlSection = ({setTasks, tasksList, data}) => {
   const ClearButton = () => {

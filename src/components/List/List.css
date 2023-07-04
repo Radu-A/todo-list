@@ -1,4 +1,6 @@
 .list-section {
+    margin: 0 auto;
+    width: 235px;
     display: flex;
     flex-direction: column;
     gap: 1rem;

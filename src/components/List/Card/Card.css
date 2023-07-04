@@ -2,7 +2,14 @@
     padding: 0 0.5rem;
     display: flex;
     justify-content: right;
+    align-items: center;
     gap: 2rem;
+    background-color: white;
     border: 1px solid #242424;
     border-radius: 5px;
+}
+
+.task-card button {
+    background-color: #f8edeb;
+    height: 2.7rem;
 }

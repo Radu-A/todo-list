@@ -14,7 +14,7 @@ const Card = ({setTasks, tasksList, task}) => {
       <p>{task}</p>
       <button onClick={handleClick}>DELETE</button>
     </article>
-);
+  );
 };
 
 export default Card;
