@@ -62,7 +62,7 @@ const filterTasks = (filterStatus = "all") => {
     : taskList.filter((task) => task.status == filterStatus);
 };
 
-
+/** Updates the pending and completed task counters. */
 const printCounters = () => {
   const todoCounter = document.getElementById("todo-counter");
   const doneCounter = document.getElementById("done-counter");
