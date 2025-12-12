@@ -1,0 +1,125 @@
+/* =============== */
+/* LOGIN / REGISTER FORM */
+/* =============== */
+
+/*
+  The 'main' setup in base.css (flex: 1) allows us to center
+  content on this page using flexbox on the main element itself.
+*/
+
+.auth-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url("../assets/background/bg-laptop.png");
+  background-size: contain;
+}
+
+.auth-section {
+  /* Overrides the generic 'section' style from base.css */
+  margin-bottom: 1rem;
+  padding: 2rem;
+  border: 1px solid var(--color-secondary);
+  border-radius: 0.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background-color: var(--color-light);
+  text-align: center;
+  max-width: 350px;
+}
+
+.auth-article {
+  /* Overrides any potential 'article' styles */
+  padding: 0;
+  border: none;
+  height: auto;
+}
+
+.auth-article span {
+  width: 100%;
+  font-size: 0.6rem;
+}
+
+/* Form Elements */
+
+/* show/hide */
+.hidden {
+  display: none !important;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  margin-bottom: 0.3rem;
+}
+
+.auth-input {
+  width: 100%;
+  height: 2.5rem;
+  padding: 0 1rem;
+  border: 1px solid var(--color-secondary);
+  border-radius: 0.3rem;
+  font-family: inherit;
+  font-size: 0.8rem;
+}
+
+.auth-input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 5px rgba(73, 151, 207, 0.5);
+}
+
+.auth-button {
+  width: 100%;
+  height: 2.5rem;
+  margin-top: 0.5rem;
+  border: none;
+  border-radius: 0.3rem;
+  background-color: var(--color-accent);
+  color: var(--color-light);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.auth-button:hover {
+  background-color: #3b7fb3; /* Darker shade of accent */
+}
+
+/* Google auth */
+
+#google-container {
+  margin-top: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Link message */
+
+.link-text {
+  margin-top: 1.5rem;
+  font-size: 0.8rem;
+  color: var(--color-secondary);
+}
+
+.link-text a {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.link-text a:hover {
+  text-decoration: underline;
+}
+
+/* VALIDATION */
+.validation-message {
+  color: rgb(255, 33, 33);
+  font-weight: 500;
+}

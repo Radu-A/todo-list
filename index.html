@@ -1,13 +1,91 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>todo-list</title>
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="./src/style.css" />
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
+    <header>
+      <div id="header-container">
+        <div id="header-left">
+          <h1>To-Do List</h1>
+          <time id="current-day"></time>
+        </div>
+        <div id="header-right" class="visible">
+          <div id="user-menu-container">
+            <button id="avatar">?</button>
+            <div id="user-dropdown" class="hidden">
+              <p id="username-display"></p>
+              <div id="dropdown-logout-button" class="dropdown-link">
+                Log out
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <section id="new-section">
+          <article id="new-article">
+            <input
+              type="text"
+              name="new-input"
+              id="new-input"
+              placeholder="New Task"
+              autocomplete="off"
+            />
+            <button id="new-button">Add</button>
+          </article>
+        </section>
+        <section id="filter-section">
+          <button
+            class="filter-button filter-active"
+            id="all-filter"
+            data-filter="all"
+          >
+            All
+          </button>
+          <span>|</span>
+          <button class="filter-button" id="todo-filter" data-filter="todo">
+            ToDo
+          </button>
+          <span>|</span>
+          <button class="filter-button" id="done-filter" data-filter="done">
+            Done
+          </button>
+        </section>
+        <section id="todo-section">
+          <div class="section-header">
+            <h2>ToDo</h2>
+            <span class="counter" id="todo-counter"></span>
+          </div>
+          <div id="todo-container"></div>
+        </section>
+        <section id="done-section">
+          <div class="section-header">
+            <h2>Done</h2>
+            <span class="counter" id="done-counter"></span>
+          </div>
+          <div id="done-container"></div>
+        </section>
+      </div>
+    </main>
+    <footer class="app-footer">
+      <p>
+        &copy; <span id="current-year">2025</span> ToDo List | Víctor Outeiro
+      </p>
+      <p>All Rights Reserved.</p>
+    </footer>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.6/Sortable.min.js"
+      integrity="sha512-csIng5zcB+XpulRUa+ev1zKo7zRNGpEaVfNB9On1no9KYTEY/rLGAEEpvgdw6nim1WdTuihZY1eqZ31K7/fZjw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./src/main.ts"></script>
   </body>
 </html>
