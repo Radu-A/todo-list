@@ -76,7 +76,7 @@ const clearTasks = (): void => {
  * @param {string} [filterStatus="all"] - The status to filter by ("all", "todo", or "done").
  * @returns {Array<Object>} The filtered list of tasks.
  */
-const filterTasks = (filterStatus = "all"): object[] => {
+const filterTasks = (filterStatus = "all"): Task[] => {
   return filterStatus === "all"
     ? taskList
     : taskList.filter((task) => task.status == filterStatus);
@@ -162,6 +162,44 @@ const printTask = (_id: string, taskName: string, status: string): void => {
   activateDeleteButton(_id, status);
   assignStatus(taskArticle, _id);
   assignEditEvent(_id);
+};
+
+// ==========================
+// 4. CRUD OPERATIONS (API CALLS)
+// ==========================
+
+/**
+ * Fetches all tasks from the API, updates the local taskList,
+ * and renders them to the DOM.
+ * @param {string} [filterStatus="all"] - The filter to apply after fetching.
+ */
+
+const getTasks = async (filterStatus = "all"): Promise<void> => {
+  const token: string | null = getToken();
+  if (!token) return;
+
+  clearTasks();
+  try {
+    const response = await fetch(API_URL, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    });
+    if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
+
+    taskList = await response.json();
+    let filteredTaskList: Task[] = filterTasks(filterStatus);
+
+    filteredTaskList.forEach((task) =>
+      printTask(task._id, task.title, task.status)
+    );
+
+    printCounters();
+  } catch (error) {
+    console.error("Failed in getTasks:", error);
+  }
 };
 
 // ==========================
